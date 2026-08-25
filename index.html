@@ -1,182 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal portfolio profile</title>
+        <title>Rakshana | BCA Student & Developer Portfolio</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <div id="header">
-            <div class="container"></div>
-        
-        <nav>
-            <img src="logo3.jpeg" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-
-                <li><a href="#">Portfolio</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-
-            </ul>
-        </nav>
-
-        <div class="header-text">
-            <p>UI/UX Designer</p>
-            <h1>Hi,I'm <span>Rakshana </span><br>From India</h1>
-        </div>
+            <div class="container">
+                <nav>
+                    <img src="logo3.jpeg" class="logo" alt="Logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <p>Full-Stack Developer & UI/UX Designer</p>
+                    <h1>Hi, I'm <span>Rakshana</span><br>From India</h1>
+                </div>
             </div>
         </div>
 
+        <!-- About Section -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="raksh1.jpeg" alt="Rakshana Profile Picture">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Hi, I’m Rakshana, a motivated 2nd-year BCA student at Kamaraj College (FacePrep Campus, Manonmaniam Sundaranar University) with a passion for Full-Stack Development, App Development, and clean UI/UX design. I love turning practical ideas into smooth digital experiences. With 75+ LinkedIn certifications, HackerRank problem-solving experience, and hands-on projects, I am eager to build solutions that make a real impact.</p>
 
-        <!-- ............abt........ -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="raksh1.jpeg">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About me</h1>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
+                            <p class="tab-links" onclick="opentab('Achievements')">Achievements</p>
+                        </div>
 
-                <p>Hi, I’m Rakshana, a UI/UX designer from India with a passion for clean, user-friendly design.
-I’m currently pursuing my BCA at Kamaraj College and love turning ideas into smooth digital experiences.
-I’ve completed 75+ LinkedIn certifications and enjoy constantly learning new tech skills.
-I’ve also participated in design events and shared my knowledge with peers and faculty.
-My dream is to build something meaningful that helps others and makes a real impact.
-
-                </p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                     
-                      <p class="tab-links "onclick="opentab('Education')">Education</p>
-                      <p class="tab-links "onclick="opentab('Achievements')">Achievements</p>
-
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Full-Stack & Web</span><br>HTML, CSS, Bootstrap, JavaScript, Python, Java</li>
+                                <li><span>App Development</span><br>Flutter, Dart, Firebase</li>
+                                <li><span>UI/UX & Tools</span><br>Interface Design, Git & GitHub, VS Code, Networking & Support</li>
+                            </ul>
+                        </div>
                     
-            
-                </div>
-
-
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>UI/UX</span><br>Designing web/App interfaces</li>
-                        <li><span>Web development</span><br>Web app development</li>
-                        <li><span>App development</span><br>Building Andriod/iOS apps</li>
-                    </ul>
-                </div>
-            
-                    <div class="tab-contents" id="Education">
-                    <ul>
-                        
-                        <li><span>2021-2022</span><br>St.Joseph's School</li>
-                        <li><span>2023-2024</span><br>St.Joseph's School</li>
-                        <li><span>2024-2027</span><br>Bachelor of Computer Applications (BCA)
-Kamaraj College,Thoothukudi</li>
-                    </ul>
-                </div>
-
-
-                 <div class="tab-contents" id="Achievements">
-                    <ul>
-                        
-                        <li><span>Paper Presentation</span><br>Winner, Techno Talk Inter-College 
-
-</li>
-                        <li><span>LinkedIn</span><br>Completed 75+  certifications</li>
-                        <li><span>HackerRank</span><br>Solved 60+ problems </li>
-                    </ul>
-                </div>
-        
-        </div>
-    </div>
-</div>
-
-
-<!-- ...............services............ -->
-
-
-<div id="services"></div>
-<div class="container">
-                    <h1 class="sub-title">My services</h1>
-                    <div class="services-list">
-                        <div>
-                            <h2>Web Design</h2>
-                            <p>I designed and developed a responsive personal portfolio website to showcase my projects, certifications and achievements.</p>
-                            <a href="#">Learn more</a>
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li><span>2024 - 2027</span><br>Bachelor of Computer Applications (BCA)<br>Kamaraj College, Thoothukudi</li>
+                                <li><span>Schooling</span><br>St. Joseph’s School, Virapandianpatnam</li>
+                            </ul>
                         </div>
-                        <div>
-                            <h2>UI/UX Design</h2>
-                            <p>I designed the user interface and user experience for my personal portfolio with a strong focus on clarity and visual appeal.</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                        <div>
-                            <h2>App Design</h2>
-                            <p>I designed the UI/UX of a mobile application which is focused on delivering a seamless and user-friendly experience. </p>
-                            <a href="#">Learn more</a>
+
+                        <div class="tab-contents" id="Achievements">
+                            <ul>
+                                <li><span>Competitions</span><br>1st Prize in TechQuiz & Winner in Techno Talk Inter-College</li>
+                                <li><span>Certifications</span><br>75+ LinkedIn Learning, 4 Microsoft courses, 9 TCS iON certifications</li>
+                                <li><span>Problem Solving</span><br>Solved 60+ problems on HackerRank</li>
+                            </ul>
                         </div>
                     </div>
-
-
-</div>
-
-
-
-
-
-<!-- ......contact..... -->
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                 <p><i class="fas fa-paper-plane"></i> rakshana132006@gmail.com</p>
-                 <p><p><i class="fas fa-phone"></i>7904932098</p>
-                 <div class="social-icons">
-                    <a href="https://www.instagram.com/__.raksh___/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61572087643947"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/rakshana-silvera-01174a323/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/RakshanaQ"><i class="fab fa-github"></i></a>
-                 </div>
+                </div>
             </div>
-            <div class="contact-right">
-             <form>
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                <button type="submit" class="btn btn2">Submit </button> 
-
-             </form>
-            </div>
-            
         </div>
-    </div>
-</div>
-<footer>
-  © Designed and developed by Rakshana
-</footer>
 
-<script>
+        <!-- Services Section -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fas fa-code"></i>
+                        <h2>Web Development</h2>
+                        <p>Building responsive, user-friendly personal portfolios, dynamic websites, and custom web apps tailored to client needs.</p>
+                        <a href="#contact">Hire Me</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-crop-alt"></i>
+                        <h2>UI/UX Design</h2>
+                        <p>Designing intuitive user interfaces and experiences for web and mobile applications with a strong focus on visual clarity.</p>
+                        <a href="#contact">Hire Me</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-mobile-screen"></i>
+                        <h2>App Development</h2>
+                        <p>Creating functional cross-platform mobile application interfaces using Flutter and Dart to deliver seamless experiences.</p>
+                        <a href="#contact">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-function opentab(tabname){
-    for(tablink of tablinks){
-        tablink.classList.remove("active-link");
-    }
-    for(tabcontent of tabcontents){
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
+        <!-- Portfolio / Projects Section (Newly Added for Clients) -->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">My Projects</h1>
+                <div class="services-list">
+                    <div>
+                        <h2>Traffic Management System</h2>
+                        <p>An intelligent system integrating OpenCV and Reinforcement Learning concepts to optimize urban traffic flow and monitoring.</p>
+                        <span class="tech-tag">Python • OpenCV • AI</span>
+                    </div>
+                    <div>
+                        <h2>Personal Portfolio Website</h2>
+                        <p>A responsive, modern developer portfolio designed and coded using HTML, CSS, and JavaScript to showcase skills and credentials.</p>
+                        <span class="tech-tag">HTML • CSS • JS</span>
+                    </div>
+                    <div>
+                        <h2>Mobile App UI/UX Concept</h2>
+                        <p>Designed a user-friendly mobile application layout focusing on modern navigation patterns, accessibility, and clean aesthetics.</p>
+                        <span class="tech-tag">UI/UX Design • Flutter Basics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</script>
+        <!-- Contact Section -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fas fa-paper-plane"></i> rakshana132006@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 7904932098</p>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/__.raksh___/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61572087643947" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/rakshana-silvera-01174a323/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/RakshanaQ" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message or Project Details" required></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Designed and Developed by Rakshana</p>
+        </footer>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            
+            function opentab(tabname){
+                for(let tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(let tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
     </body>
 </html>
