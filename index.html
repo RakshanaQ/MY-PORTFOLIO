@@ -1,182 +1,498 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal portfolio profile</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-    <body>
-        <div id="header">
-            <div class="container"></div>
-        
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Rakshana</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Internal CSS for immediate functionality -->
+    <style>
+        /* --- General Reset & Typography --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* --- Header & Navigation --- */
+        #header {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #fff;
+            height: 100vh;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50px; /* Adjust based on layout */
+            transform: translateY(-50%);
+            width: 100%; /* Center content */
+            text-align: center;
+        }
+
+        .header-text p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .header-text h1 {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .header-text span {
+            color: #ffd700;
+        }
+
+        /* --- Container Utility --- */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* --- About Section --- */
+        #about {
+            padding: 50px 0;
+            background: #fff;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-col-1, .about-col-2 {
+            flex-basis: 45%;
+        }
+
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .about-col-2 {
+            padding-left: 40px;
+        }
+
+        .sub-title {
+            font-size: 40px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* --- Tabs (Skills, Education, Achievements) --- */
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 30px;
+        }
+
+        .tab-links {
+            margin-right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab-links:hover {
+            color: #4ca1af;
+        }
+
+        .tab-links.active-link {
+            border-bottom: 3px solid #4ca1af;
+            color: #4ca1af;
+        }
+
+        .tab-contents {
+            display: none; /* Hidden by default */
+            animation: fadeIn 1s;
+        }
+
+        .tab-contents.active-tab {
+            display: block; /* Show when active */
+        }
+
+        .tab-contents ul {
+            list-style: none;
+        }
+
+        .tab-contents ul li {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .tab-contents ul li span {
+            font-weight: bold;
+            color: #4ca1af;
+            display: block;
+        }
+
+        /* --- Services Section --- */
+        #services {
+            padding: 50px 0;
+            background: #f9f9f9;
+        }
+
+        .services-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .services-list div {
+            flex-basis: 30%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .services-list div:hover {
+            transform: translateY(-5px);
+        }
+
+        .services-list h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .services-list p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .services-list a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4ca1af;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            padding: 50px 0;
+            background: #fff;
+        }
+
+        .contact-left, .contact-right {
+            flex-basis: 45%;
+        }
+
+        .contact-left p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .contact-left i {
+            color: #4ca1af;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background: #4ca1af;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #2c3e50;
+        }
+
+        .contact-right form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-right input, .contact-right textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4ca1af;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn2 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #2c3e50;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* --- Animation --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .about-col-1 img {
+                margin-bottom: 20px;
+            }
+            
+            .about-col-2 {
+                padding-left: 0;
+            }
+            
+            .header-text {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                padding: 50px 20px;
+                text-align: center;
+            }
+            
+            .services-list div {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container"></div>
         <nav>
-            <img src="logo3.jpeg" class="logo">
+            <img src="logo3.jpeg" class="logo" alt="Logo">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-
-                <li><a href="#">Portfolio</a></li>
-
-                <li><a href="#">Contact</a></li>
-
-
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
         <div class="header-text">
             <p>UI/UX Designer</p>
-            <h1>Hi,I'm <span>Rakshana </span><br>From India</h1>
-        </div>
-            </div>
-        </div>
-
-
-        <!-- ............abt........ -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="raksh1.jpeg">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About me</h1>
-
-                <p>Hi, I’m Rakshana, a UI/UX designer from India with a passion for clean, user-friendly design.
-I’m currently pursuing my BCA at Kamaraj College and love turning ideas into smooth digital experiences.
-I’ve completed 75+ LinkedIn certifications and enjoy constantly learning new tech skills.
-I’ve also participated in design events and shared my knowledge with peers and faculty.
-My dream is to build something meaningful that helps others and makes a real impact.
-
-                </p>
-
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                     
-                      <p class="tab-links "onclick="opentab('Education')">Education</p>
-                      <p class="tab-links "onclick="opentab('Achievements')">Achievements</p>
-
-                    
-            
-                </div>
-
-
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>UI/UX</span><br>Designing web/App interfaces</li>
-                        <li><span>Web development</span><br>Web app development</li>
-                        <li><span>App development</span><br>Building Andriod/iOS apps</li>
-                    </ul>
-                </div>
-            
-                    <div class="tab-contents" id="Education">
-                    <ul>
-                        
-                        <li><span>2021-2022</span><br>St.Joseph's School</li>
-                        <li><span>2023-2024</span><br>St.Joseph's School</li>
-                        <li><span>2024-2027</span><br>Bachelor of Computer Applications (BCA)
-Kamaraj College,Thoothukudi</li>
-                    </ul>
-                </div>
-
-
-                 <div class="tab-contents" id="Achievements">
-                    <ul>
-                        
-                        <li><span>Paper Presentation</span><br>Winner, Techno Talk Inter-College 
-
-</li>
-                        <li><span>LinkedIn</span><br>Completed 75+  certifications</li>
-                        <li><span>HackerRank</span><br>Solved 60+ problems </li>
-                    </ul>
-                </div>
-        
+            <h1>Hi, I'm <span>Rakshana</span><br>From India</h1>
         </div>
     </div>
-</div>
 
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="raksh1.jpeg" alt="Rakshana Portrait">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Hi, I'm Rakshana, a UI/UX designer from India with a passion for clean, user-friendly design.
+                    I'm currently pursuing my BCA at Kamaraj College and love turning ideas into smooth digital experiences.
+                    I've completed 75+ LinkedIn certifications and enjoy constantly learning new tech skills.
+                    I've also participated in design events and shared my knowledge with peers and faculty.
+                    My dream is to build something meaningful that helps others and makes a real impact.</p>
 
-<!-- ...............services............ -->
-
-
-<div id="services"></div>
-<div class="container">
-                    <h1 class="sub-title">My services</h1>
-                    <div class="services-list">
-                        <div>
-                            <h2>Web Design</h2>
-                            <p>I designed and developed a responsive personal portfolio website to showcase my projects, certifications and achievements.</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                        <div>
-                            <h2>UI/UX Design</h2>
-                            <p>I designed the user interface and user experience for my personal portfolio with a strong focus on clarity and visual appeal.</p>
-                            <a href="#">Learn more</a>
-                        </div>
-                        <div>
-                            <h2>App Design</h2>
-                            <p>I designed the UI/UX of a mobile application which is focused on delivering a seamless and user-friendly experience. </p>
-                            <a href="#">Learn more</a>
-                        </div>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Achievements')">Achievements</p>
                     </div>
 
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX Designing</span><br>Designing web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
 
-</div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2021-2022</span><br>St. Joseph's School</li>
+                            <li><span>2023-2024</span><br>St. Joseph's School</li>
+                            <li><span>2024-2027</span><br>Bachelor of Computer Applications (BCA)<br>Kamaraj College, Thoothukudi</li>
+                        </ul>
+                    </div>
 
-
-
-
-
-<!-- ......contact..... -->
-
-<div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                 <p><i class="fas fa-paper-plane"></i> rakshana132006@gmail.com</p>
-                 <p><p><i class="fas fa-phone"></i>7904932098</p>
-                 <div class="social-icons">
-                    <a href="https://www.instagram.com/__.raksh___/"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61572087643947"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/rakshana-silvera-01174a323/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/RakshanaQ"><i class="fab fa-github"></i></a>
-                 </div>
+                    <div class="tab-contents" id="Achievements">
+                        <ul>
+                            <li><span>Paper Presentation</span><br>Winner, Techno Talk Inter-College</li>
+                            <li><span>LinkedIn</span><br>Completed 75+ certifications</li>
+                            <li><span>HackerRank</span><br>Solved 60+ problems</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="contact-right">
-             <form>
-                <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="Message" rows="6" placeholder="Your message"></textarea>
-                <button type="submit" class="btn btn2">Submit </button> 
-
-             </form>
-            </div>
-            
         </div>
     </div>
-</div>
-<footer>
-  © Designed and developed by Rakshana
-</footer>
 
-<script>
+    <!-- Services Section (FIXED: Container moved inside) -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Design</h2>
+                    <p>I designed and developed a responsive personal portfolio website to showcase my projects, certifications and achievements.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <h2>UI/UX Design</h2>
+                    <p>I designed the user interface and user experience for my personal portfolio with a strong focus on clarity and visual appeal.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <h2>App Design</h2>
+                    <p>I designed the UI/UX of a mobile application which is focused on delivering a seamless and user-friendly experience.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    var tablinks = document.getElementsByClassName("tab-links");
+    <!-- Contact Section (FIXED: Removed nested <p> tag) -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> rakshana132006@gmail.com</p>
+                    <!-- Fixed: Removed extra opening <p> tag -->
+                    <p><i class="fas fa-phone"></i> 7904932098</p>
+                    
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/__.raksh___/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61572087643947" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/rakshana-silvera-01174a323/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/RakshanaQ" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Designed and developed by Rakshana</p>
+    </footer>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
-function opentab(tabname){
-    for(tablink of tablinks){
-        tablink.classList.remove("active-link");
-    }
-    for(tabcontent of tabcontents){
-        tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
 
-</script>
-    </body>
+        function opentab(tabname) {
+            // Remove active class from all links and contents
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-link");
+            }
+            for (var j = 0; j < tabcontents.length; j++) {
+                tabcontents[j].classList.remove("active-tab");
+            }
+            
+            // Add active class to clicked link and target content
+            // Note: event.currentTarget is used to reference the clicked element
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
 </html>
